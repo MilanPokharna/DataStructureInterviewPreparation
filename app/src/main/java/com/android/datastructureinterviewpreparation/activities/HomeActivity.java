@@ -5,28 +5,23 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
+import android.widget.Button;
 
 import com.android.datastructureinterviewpreparation.R;
 import com.android.datastructureinterviewpreparation.models.fetchData;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity {
 
 
-    public ArrayList<String> ques = new ArrayList<String>();
-    public ArrayList<String> ans = new ArrayList<String>();
-
     fetchData fetchData = new fetchData();
+    @BindView(R.id.button)
+    Button button;
 
 
     @Override
@@ -35,11 +30,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        if (isNetworkConnected())
-        {
+        if (isNetworkConnected()) {
 
-        }
-        else {
+        } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(HomeActivity.this);
             dialog.setTitle("Connectino Error ");
             dialog.setCancelable(false);
@@ -54,9 +47,16 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
+
     private boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         return cm.getActiveNetworkInfo() != null;
+    }
+
+    @OnClick(R.id.button)
+    public void onViewClicked() {
+        Intent intent = new Intent(HomeActivity.this,ques1.class);
+        startActivity(intent);
     }
 }
