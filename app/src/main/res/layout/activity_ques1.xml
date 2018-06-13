@@ -11,15 +11,20 @@
 
     <TextView
         android:id="@+id/ques"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
         android:textSize="30sp"
         android:text="QUESTION :"
+        style="@style/ques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:layout_below="@+id/ques"
         android:id="@+id/question"
-        android:layout_marginTop="5dp"
+        style="@style/question"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:textSize="25sp"
         android:text="what is the question"
         android:layout_width="wrap_content"
@@ -28,7 +33,9 @@
         android:layout_below="@id/question"
         android:id="@+id/ans"
         android:text="ANSWER :"
-        android:layout_marginTop="20dp"
+        style="@style/ans"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -36,18 +43,19 @@
         android:layout_below="@id/ans"
         android:id="@+id/answer"
         android:textSize="25sp"
-        android:layout_marginTop="8dp"
+        style="@style/answer"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="the answer is here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_below="@+id/ques"
         android:orientation="horizontal"
-        android:layout_marginTop="400dp"
+        android:layout_alignParentBottom="true"
         android:weightSum="1"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_weight="0.7"
             android:layout_width="0dp"
@@ -82,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp" />
             <TextView
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:textSize="20sp"
                 android:layout_gravity="center"
                 android:fontFamily="serif-monospace"

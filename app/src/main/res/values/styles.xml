@@ -12,5 +12,29 @@
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ques">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/comicpanels</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="question">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/earworm</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="ans">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/comicpanels</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="answer">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/earworm</item>
+        <item name="android:gravity">center</item>
+    </style>
 
 </resources>
