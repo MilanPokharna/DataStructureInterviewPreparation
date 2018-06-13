@@ -1,7 +1,7 @@
 package com.android.datastructureinterviewpreparation.models;
 
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.android.datastructureinterviewpreparation.activities.HomeActivity;
 
@@ -16,12 +16,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class fetchData extends AsyncTask<Void, Void, Void> {
     public String data = "";
-    public String single = "";
-    public String parsed = "";
-
+    public static ArrayList<String> ques = new ArrayList<>();
+    public static ArrayList<String> ans = new ArrayList<>();
+    public String string;
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -36,14 +38,16 @@ public class fetchData extends AsyncTask<Void, Void, Void> {
                 line = bufferedReader.readLine();
                 data = data+line;
             }
+
             JSONObject object = new JSONObject(data);
             JSONArray jsonArray = object.getJSONArray("questions");
             for (int i=0;i<jsonArray.length();i++)
             {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                single = "Question : " +jsonObject.get("question")+"\n"+
-                         "Answer : "+jsonObject.get("Answer")+"\n";
-                parsed = parsed+single+"\n";
+                string = (String)jsonObject.get("question");
+                ques.add(string);
+                string = (String)jsonObject.get("Answer");
+                ans.add(string);
             }
 
             }
@@ -54,12 +58,13 @@ public class fetchData extends AsyncTask<Void, Void, Void> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 
     @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
-        HomeActivity.text.setText(this.parsed);
+    protected void onPostExecute(Void v) {
+        super.onPostExecute(v);
+
     }
 }
