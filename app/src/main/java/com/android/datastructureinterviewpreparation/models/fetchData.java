@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.android.datastructureinterviewpreparation.activities.HomeActivity;
+import com.android.datastructureinterviewpreparation.activities.ques1;
+import com.android.datastructureinterviewpreparation.activities.ques2;
+import com.android.datastructureinterviewpreparation.interfaces.asyncResponse;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,14 +22,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fetchData extends AsyncTask<Void, Void, Void> {
+public class fetchData extends AsyncTask<Void, Void, String> {
+    public asyncResponse delegate = null;
     public String data = "";
-    public static ArrayList<String> ques = new ArrayList<>();
-    public static ArrayList<String> ans = new ArrayList<>();
+    public static List<String> ques = new ArrayList<>();
+    public static List<String> ans = new ArrayList<>();
     public String string;
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected String doInBackground(Void... voids) {
+
         try {
             URL url = new URL("https://learncodeonline.in/api/android/datastructure.json");
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -58,13 +63,16 @@ public class fetchData extends AsyncTask<Void, Void, Void> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        return null;
+        return ques.get(0);
     }
 
     @Override
-    protected void onPostExecute(Void v) {
-        super.onPostExecute(v);
-
+    protected void onPostExecute(String result) {
+        super.onPostExecute(result);
+        delegate.processFinish(result);
+        //ques1.question.setText(ques.get(0));
+        //ques1.answer.setText(ans.get(0));
+//        ques2.question.setText(ques.get(1));
+//        ques2.answer.setText(ans.get(1));
     }
 }

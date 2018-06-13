@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ques1"></activity>
+        <activity android:name=".activities.ques2"></activity>
+        <activity android:name=".activities.ques3"></activity>
+        <activity android:name=".activities.ques4"></activity>
+        <activity android:name=".activities.ques5"></activity>
     </application>
 
 </manifest>
