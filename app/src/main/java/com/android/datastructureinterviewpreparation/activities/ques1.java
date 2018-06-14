@@ -9,7 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -41,7 +43,8 @@ public class ques1 extends AppCompatActivity {
     public static TextView question;
     @BindView(R.id.ans)
     TextView ans;
-    List<String> myqueslist = new ArrayList<>();
+    public static List<String> myqueslist = new ArrayList<>();
+    public static List<String> myanslist = new ArrayList<>();
     public List<List<String>> queslist = new ArrayList<List<String>>();
     @SuppressLint("StaticFieldLeak")
     public static TextView answer;
@@ -54,6 +57,9 @@ public class ques1 extends AppCompatActivity {
     @BindView(R.id.re)
     RelativeLayout re;
 
+    @BindView(R.id.linear)
+    LinearLayout linear;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +69,7 @@ public class ques1 extends AppCompatActivity {
         question = (TextView) findViewById(R.id.question);
         answer = (TextView) findViewById(R.id.answer);
         if (isNetworkConnected()) {
-
+            prev.setVisibility(View.INVISIBLE);
             mytask mytask = new mytask();
             mytask.execute();
 
@@ -91,9 +97,11 @@ public class ques1 extends AppCompatActivity {
 
     @OnClick(R.id.next)
     public void onViewClicked() {
-        Intent i = new Intent(ques1.this,ques2.class);
+        Intent i = new Intent(ques1.this, ques2.class);
+        startActivity(i);
 
     }
+
 
     private class mytask extends AsyncTask<Void, Void, List<List<String>>> {
         public String data = "";
@@ -147,6 +155,8 @@ public class ques1 extends AppCompatActivity {
     public void mymethod(List<List<String>> result) {
         queslist = result;
         myqueslist = queslist.get(0);
+        myanslist = queslist.get(1);
         question.setText(myqueslist.get(0));
+        answer.setText(myanslist.get(0));
     }
 }
