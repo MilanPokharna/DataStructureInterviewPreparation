@@ -8,4 +8,12 @@
     <string name="prev"><![CDATA[<-Prev]]></string>
     <string name="next"><![CDATA[NEXT->]]></string>
     <string name="learn_code_online">Learn Code Online</string>
+    <string name="learncodeonline_in">LearnCodeOnline.in</string>
+    <string name="interview_questions">Interview Questions</string>
+    <string name="let_s_begin">LET\'S BEGIN</string>
+    <string name="lets_begin">LET\'S BEGIN</string>
+    <string name="learn_on_the_go_app">Learn on the Go App</string>
+    <string name="web_development_programming_ios_and_android_app_development">Web development, Programming, iOS and Android App development</string>
+    <string name="answer">ANSWER :</string>
+    <string name="question">QUESTION :</string>
 </resources>

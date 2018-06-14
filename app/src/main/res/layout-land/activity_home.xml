@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/gradient2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="2"
     android:padding="5dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:ignore="DisableBaselineAlignment">
 <RelativeLayout
     android:layout_weight="0.8"
     android:orientation="vertical"
@@ -18,11 +20,12 @@
         android:layout_centerVertical="true"
         android:src="@drawable/lcologowhite"
         android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        tools:ignore="ContentDescription" />
     <TextView
         android:id="@+id/text"
         style="@style/question"
-        android:text="LearnCodeOnline.in"
+        android:text="@string/learncodeonline_in"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/logo"
@@ -43,7 +46,8 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ds"
             android:layout_width="260dp"
-            android:layout_height="90dp" />
+            android:layout_height="90dp"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/text1"
@@ -52,7 +56,7 @@
             android:layout_below="@+id/image"
             android:textSize="22sp"
             android:textColor="#e4ff1234"
-            android:text="Interview Questions"
+            android:text="@string/interview_questions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
@@ -64,7 +68,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:text="LET'S BEGIN"
+            android:text="@string/lets_begin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
