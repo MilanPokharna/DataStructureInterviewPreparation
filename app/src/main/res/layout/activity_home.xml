@@ -4,16 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient2"
     tools:context=".activities.HomeActivity">
 
 
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/lcologowhite"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <TextView
+        android:id="@+id/text"
+        style="@style/question"
+        android:text="LearnCodeOnline.in"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logo"
+        android:textSize="30sp"
+        android:textColor="#ffa200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/image"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/text"
+        android:src="@drawable/ds"
+        android:layout_width="260dp"
+        android:layout_height="90dp" />
+
+    <TextView
+        android:id="@+id/text1"
+        style="@style/ans"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image"
+        android:textSize="22sp"
+        android:text="Interview Questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Button
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
         android:id="@+id/button"
+        style="@style/question"
+        android:textColor="#144ec3"
+        android:background="#"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
-        android:text="Clickme"
+        android:text="LET'S BEGIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

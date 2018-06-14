@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.datastructureinterviewpreparation.R;
-import com.android.datastructureinterviewpreparation.models.fetchData;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,9 +20,16 @@ import butterknife.OnClick;
 public class HomeActivity extends AppCompatActivity {
 
 
-    fetchData fetchData = new fetchData();
     @BindView(R.id.button)
     Button button;
+    @BindView(R.id.logo)
+    ImageView logo;
+    @BindView(R.id.text)
+    TextView text;
+    @BindView(R.id.image)
+    ImageView image;
+    @BindView(R.id.text1)
+    TextView text1;
 
 
     @Override
@@ -31,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if (isNetworkConnected()) {
+
 
         } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(HomeActivity.this);
@@ -56,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void onViewClicked() {
-        Intent intent = new Intent(HomeActivity.this,ques1.class);
+        Intent intent = new Intent(HomeActivity.this, ques1.class);
         startActivity(intent);
     }
 }
