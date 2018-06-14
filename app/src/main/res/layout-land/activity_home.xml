@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gradient2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2"
+    android:padding="5dp"
+    android:orientation="horizontal">
+<RelativeLayout
+    android:layout_weight="0.8"
+    android:orientation="vertical"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/lcologowhite"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <TextView
+        android:id="@+id/text"
+        style="@style/question"
+        android:text="LearnCodeOnline.in"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logo"
+        android:textSize="30sp"
+        android:textColor="#ffa200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_weight="1.2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ds"
+            android:layout_width="260dp"
+            android:layout_height="90dp" />
+
+        <TextView
+            android:id="@+id/text1"
+            style="@style/ans"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/image"
+            android:textSize="22sp"
+            android:textColor="#e4ff1234"
+            android:text="Interview Questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/button"
+            style="@style/question"
+            android:textColor="#144ec3"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="LET'S BEGIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</LinearLayout>

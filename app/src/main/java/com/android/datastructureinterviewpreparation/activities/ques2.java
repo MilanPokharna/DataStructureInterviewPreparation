@@ -66,7 +66,7 @@ public class ques2 extends AppCompatActivity {
             dialog.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), ques2.class);
                     startActivity(intent);
                 }
             }).show();

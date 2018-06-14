@@ -26,7 +26,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textSize="25sp"
-        android:text="what is the question"
+        tools:text="what is the question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -46,7 +46,7 @@
         style="@style/answer"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
-        android:text="the answer is here"
+        tools:text="the answer is here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
