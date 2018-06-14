@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import com.android.datastructureinterviewpreparation.activities.HomeActivity;
 import com.android.datastructureinterviewpreparation.activities.ques1;
 import com.android.datastructureinterviewpreparation.activities.ques2;
-import com.android.datastructureinterviewpreparation.interfaces.asyncResponse;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class fetchData extends AsyncTask<Void, Void, String> {
-    public asyncResponse delegate = null;
+
     public String data = "";
     public static List<String> ques = new ArrayList<>();
     public static List<String> ans = new ArrayList<>();
@@ -69,7 +68,6 @@ public class fetchData extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        delegate.processFinish(result);
         //ques1.question.setText(ques.get(0));
         //ques1.answer.setText(ans.get(0));
 //        ques2.question.setText(ques.get(1));

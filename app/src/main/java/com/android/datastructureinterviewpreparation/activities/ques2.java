@@ -10,9 +10,12 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.datastructureinterviewpreparation.R;
 import com.android.datastructureinterviewpreparation.models.fetchData;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +29,7 @@ public class ques2 extends AppCompatActivity {
     TextView ans;
     @SuppressLint("StaticFieldLeak")
     public static TextView answer;
-
+    String queslist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +38,11 @@ public class ques2 extends AppCompatActivity {
 
         question = (TextView)findViewById(R.id.question);
         answer = (TextView)findViewById(R.id.answer);
-
-
-        fetchData fetchData = new fetchData();
+        Bundle extras = getIntent().getExtras();
+        queslist = extras.getString("ques");
 
         if (isNetworkConnected()) {
-        fetchData.execute();
+            Toast.makeText(this, queslist, Toast.LENGTH_SHORT).show();
 
         } else {
             AlertDialog.Builder dialog = new AlertDialog.Builder(ques2.this);
