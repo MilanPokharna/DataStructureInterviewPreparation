@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,6 +38,10 @@ public class ques5 extends AppCompatActivity {
     LinearLayout linear;
     @BindView(R.id.re)
     RelativeLayout re;
+    @BindView(R.id.app)
+    ImageView imageView;
+    @BindView(R.id.applink)
+    TextView applink;
 
 
     @Override
@@ -63,7 +69,26 @@ public class ques5 extends AppCompatActivity {
                 }
             }).show();
         }
-
+        linear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(android.content.Intent.ACTION_VIEW);
+                i.setData(Uri.parse("https://courses.learncodeonline.in/"));
+                startActivity(i);
+            }
+        });
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callme();
+            }
+        });
+        applink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callme();
+            }
+        });
     }
 
     private boolean isNetworkConnected() {
@@ -84,5 +109,19 @@ public class ques5 extends AppCompatActivity {
             case R.id.linear:
                 break;
         }
+    }
+    public void callme()
+    {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=in.learncodeonline.lco")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=in.learncodeonline.lco")));
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(ques5.this,HomeActivity.class);
+        startActivity(i);
     }
 }

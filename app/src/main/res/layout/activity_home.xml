@@ -41,16 +41,16 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/image"
         android:textSize="22sp"
+        android:textColor="#e4ff1234"
         android:text="Interview Questions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <Button
-        android:layout_marginBottom="20dp"
+    <TextView
+        android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:id="@+id/button"
         style="@style/question"
         android:textColor="#144ec3"
-        android:background="#"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
