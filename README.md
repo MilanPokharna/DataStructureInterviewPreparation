@@ -1,6 +1,6 @@
 # Data Structure Interview Preparation
-#### Data Structure Interview Preparation Application is a task from Learn Code Online.
-##### This is a simple application contains a number of Questions about Data Structure with Answers that are mostly asked in the interviews.
+##### Data Structure Interview Preparation Application is a task from Learn Code Online.
+###### This is a simple application contains a number of Questions about Data Structure with Answers that are mostly asked in the interviews.
 
 ### Link to get this app : https://goo.gl/onRQrY
 
